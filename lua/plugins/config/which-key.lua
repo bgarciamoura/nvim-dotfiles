@@ -1,5 +1,0 @@
-local whichKeyConfig = {
-
-}
-
-return whichKeyConfig
