@@ -11,9 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	-- list of plugins
-},{
+
+local opts = {
   root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?
@@ -183,4 +182,10 @@ require("lazy").setup({
     -- Track each new require in the Lazy profiling tab
     require = false,
   },
-})
+}
+
+local plugins = {}
+
+
+require("lazy").setup(plugins, opts)
+
