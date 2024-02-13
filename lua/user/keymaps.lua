@@ -42,6 +42,9 @@ vim.keymap.set('n', '<M-Up>', '<C-W>+');
 vim.keymap.set('n', '<C-s>', ':w<CR>');
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>');
 
+-- select all text in current buffer
+vim.keymap.set('n', '<C-a>', ':keepjumps normal! ggVG<cr>')
+
 -- close current buffer
 vim.keymap.set('n', '<leader>c', ':BufferClose<CR>');
 
@@ -62,3 +65,4 @@ vim.keymap.set('n', '<leader>p', ':BufferPin<CR>');
 
 -- close all buffer but current
 vim.keymap.set('n', '<leader>q', ':BufferCloseAllButCurrent<CR>');
+
