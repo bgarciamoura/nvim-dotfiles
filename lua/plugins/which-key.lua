@@ -118,7 +118,12 @@ function Plugin.config()
 				x = { "<cmd>Lazy clean<CR>", "Clean plugins that are no longer needed" },
 				s = { "<cmd>Lazy sync<CR>", "Run install, clean and update" },
 				u = { "<cmd>Lazy update<CR>", "Update plugins. This also update the lockfile" }
+		},
+		["<leader>N"] = {
+			name = "+NeoTree",
+				t = { "<cmd>Neotree toggle<CR>", "Toggle the NeoTree panel" }
 		}
+		
 	})
 end
 

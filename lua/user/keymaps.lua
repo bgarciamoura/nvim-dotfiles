@@ -1,6 +1,6 @@
 -- set leader key to space
 vim.g.mapleader = ' ';
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>');
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>');
 
 -- change the k for j to move up and down
 vim.keymap.set('n', 'k', 'j');
