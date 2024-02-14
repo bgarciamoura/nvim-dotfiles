@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
   group = vim.api.nvim_create_augroup('UserOnSave', {}),
   pattern = '*',
   callback = function()
+		vim.lsp.buf.format()
     local n_lines = vim.api.nvim_buf_line_count(0)
     local last_nonblank = vim.fn.prevnonblank(n_lines)
     if last_nonblank <= n_lines then vim.api.nvim_buf_set_lines(0,

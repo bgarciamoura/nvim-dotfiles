@@ -92,8 +92,8 @@ Plugin.opts = {
 }
 
 function Plugin.init()
-		vim.o.timeout = true 
-	vim.o.timeoutlen = 300 
+		vim.o.timeout = true
+	vim.o.timeoutlen = 300
 end
 
 function Plugin.config()
@@ -103,7 +103,7 @@ function Plugin.config()
 			name = "+Files",
 				b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
 				f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-				g = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+				l = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 				h = { "<cmd>Telescope help_tags<CR>", "Find Help Tags" },
 				m = { "<cmd>Telescope marks<CR>", "Find Marks" },
 				r = { "<cmd>Telescope registers<CR>", "Find Registers" },
@@ -126,8 +126,11 @@ function Plugin.config()
 		["<leader>M"] = {
 			name = "+Mason",
 				m = { "<cmd>Mason<CR>", "Shows Mason panel" }
+		},
+		["<leader>O"] = {
+			name = "+None_LS",
+				f = { "Format document using prettier using <leader>lf" }
 		}
-		
 	})
 end
 
