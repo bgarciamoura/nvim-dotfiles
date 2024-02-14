@@ -1,12 +1,11 @@
 local Plugin = { "zbirenbaum/copilot.lua" }
 
-Plugin.cmd = 'Copilot'
+Plugin.cmd = "Copilot"
 
-Plugin.event = 'InsertEnter'
-
+Plugin.event = "InsertEnter"
 
 function Plugin.config()
-	local copilot = require('copilot')
+	local copilot = require("copilot")
 
 	copilot.setup({
 		panel = {
@@ -17,11 +16,11 @@ function Plugin.config()
 				jump_next = "]]",
 				accept = "<CR>",
 				refresh = "gr",
-				open = "<M-CR>"
+				open = "<M-CR>",
 			},
 			layout = {
 				position = "bottom", -- | top | left | right
-				ratio = 0.4
+				ratio = 0.4,
 			},
 		},
 		suggestion = {
@@ -29,7 +28,7 @@ function Plugin.config()
 			auto_trigger = true,
 			debounce = 75,
 			keymap = {
-				accept = "<M-l>",
+				accept = "<C-f>",
 				accept_word = false,
 				accept_line = false,
 				next = "<M-]>",
@@ -48,7 +47,7 @@ function Plugin.config()
 			cvs = false,
 			["."] = false,
 		},
-		copilot_node_command = 'node', -- Node.js version must be > 18.x
+		copilot_node_command = "node", -- Node.js version must be > 18.x
 		server_opts_overrides = {},
 	})
 
@@ -56,12 +55,10 @@ function Plugin.config()
 
 	--vim.api.nvim_set_keymap('i', '<C-f>', 'copilot#Accept()', { noremap = true, silent = true, expr = true });
 
-
 	--vim.api.nvim_set_keymap('i', '<C->>', 'copilot#Next()', { noremap = true, silent = true, expr = true });
 
 	--vim.api.nvim_set_keymap('i', '<C-<>', 'copilot#Prev()', { noremap = true, silent = true, expr = true });
 end
 
-
-return Plugin;
+return Plugin
 
