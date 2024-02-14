@@ -122,6 +122,10 @@ function Plugin.config()
 		["<leader>N"] = {
 			name = "+NeoTree",
 				t = { "<cmd>Neotree toggle<CR>", "Toggle the NeoTree panel" }
+		},
+		["<leader>M"] = {
+			name = "+Mason",
+				m = { "<cmd>Mason<CR>", "Shows Mason panel" }
 		}
 		
 	})
