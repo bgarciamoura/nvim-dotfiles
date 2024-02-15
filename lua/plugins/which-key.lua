@@ -151,6 +151,11 @@ function Plugin.config()
 			e = { "<Plug>(emmet-expand-abbr)", "Emmet autocomplete" },
 			E = { "<Plug>(emmet-expand-line)", "Emmet expand line" },
 		},
+		["<leader>G"] = {
+			name = "+Git",
+			p = { "<cmd>:Gitsigns preview_hunk<CR>", "Preview Hunk" },
+			l = { "<cmd>:Gitsigns toggle_current_line_blame<CR>", "Toggle Blame Line" },
+		},
 	})
 end
 
