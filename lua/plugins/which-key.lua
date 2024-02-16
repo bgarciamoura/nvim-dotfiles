@@ -99,7 +99,7 @@ end
 function Plugin.config()
 	local wk = require("which-key")
 	wk.register({
-		["<leader>t"] = {
+		["<leader>T"] = {
 			name = "+Files",
 			b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
 			f = { "<cmd>Telescope find_files<CR>", "Find Files" },
@@ -179,6 +179,23 @@ function Plugin.config()
 			d = { "<cmd>BufferOrderByDirectory<CR>", "Sort Automatically by Directory" },
 			l = { "<cmd>BufferOrderByLanguage<CR>", "Sort Automatically by Language" },
 			w = { "<cmd>BufferOrderByWindowNumber<CR>", "Sort Automatically by Window Number" },
+		},
+		["<leader>S"] = {
+			name = "+Live Server",
+			s = { "<cmd>StartLiveServer<CR>", "Start Live Server on port 8080" },
+			k = { "<cmd>KillLiveServer<CR>", "Kill Live Server" },
+			p = { "<cmd>StartLiveServerOnPort 5500<CR>", "Start Live Server on port 5500" },
+			t = { "<cmd>KillLiveServerOnPort 5500<CR>", "Kill Live Server on port 5500" },
+			b = { "<cmd>StartBrowserSync<CR>", "Start Browser Sync" },
+			l = { "<cmd>KillBrowserSync<CR>", "Kill Browser Sync" },
+			q = { "<cmd>StartBrowserSyncOnPort 5501<CR>", "Start Browser Sync on port 5501" },
+			w = { "<cmd>KillBrowserSyncOnPort 5501<CR>", "Kill Browser Sync on port 5501" },
+		},
+		["<leader>F"] = {
+			name = "+Fold Code",
+			o = { "zr", "Open All Folds" },
+			c = { "zm", "Close All Folds" },
+			f = { "za", "Toggle Fold" },
 		},
 	})
 end

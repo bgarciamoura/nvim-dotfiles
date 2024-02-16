@@ -18,7 +18,8 @@ function Plugin.init()
 	--vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 	--vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
 	--vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
-	--
+	-- create a file using telescope
+	--vim.keymap.set("n", "<leader>fc", "<cmd>Telescope find_files cwd=" .. vim.fn.expand("%:p:h") .. "<cr>")
 end
 
 function Plugin.config()

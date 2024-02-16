@@ -63,10 +63,10 @@ vim.keymap.set("n", "<leader>o", "o<Esc>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>c", ":BufferClose<CR>")
 
 -- move to next buffer
-vim.keymap.set("n", "<leader>l", ":BufferNext<CR>")
+-- vim.keymap.set("n", "<leader>l", ":BufferNext<CR>")
 
 -- move to previous buffer
-vim.keymap.set("n", "<leader>h", ":BufferPrevious<CR>")
+-- vim.keymap.set("n", "<leader>h", ":BufferPrevious<CR>")
 
 -- reorder: move the buffer next
 vim.keymap.set("n", "<leader>>", ":BufferMoveNext")
