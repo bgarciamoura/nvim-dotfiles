@@ -238,15 +238,15 @@ function Plugin.config()
 				symbols = {
 					-- Change type
 					added = "✚", -- NOTE: you can set any of these to an empty string to not show them
-					deleted = "",
-					modified = "",
-					renamed = "󰑕",
+					deleted = "✖",
+					modified = "✹",
+					renamed = "➜",
 					-- Status type
-					untracked = "",
-					ignored = "",
-					unstaged = "󰄱",
-					staged = "",
-					conflict = "",
+					untracked = "★",
+					ignored = "◌",
+					unstaged = "✗",
+					staged = "✓",
+					conflict = "",
 				},
 				align = "left",
 			},
@@ -279,19 +279,25 @@ function Plugin.config()
 				{
 					"container",
 					content = {
-						{ "name",          zindex = 10 },
+						{ "name",      zindex = 10 },
 						{
 							"symlink_target",
 							zindex = 10,
 							highlight = "NeoTreeSymbolicLinkTarget",
 						},
-						{ "clipboard",     zindex = 10 },
-						{ "diagnostics",   errors_only = true, zindex = 20,     align = "right",          hide_when_expanded = true },
-						{ "git_status",    zindex = 10,        align = "right", hide_when_expanded = true },
-						{ "file_size",     zindex = 10,        align = "right" },
-						{ "type",          zindex = 10,        align = "right" },
-						{ "last_modified", zindex = 10,        align = "right" },
-						{ "created",       zindex = 10,        align = "right" },
+						{ "clipboard", zindex = 10 },
+						{
+							"diagnostics",
+							errors_only = true,
+							zindex = 20,
+							align = "right",
+							hide_when_expanded = true,
+						},
+						{ "git_status",    zindex = 10, align = "right", hide_when_expanded = true },
+						{ "file_size",     zindex = 10, align = "right" },
+						{ "type",          zindex = 10, align = "right" },
+						{ "last_modified", zindex = 10, align = "right" },
+						{ "created",       zindex = 10, align = "right" },
 					},
 				},
 			},
@@ -352,7 +358,7 @@ function Plugin.config()
 		window = {                -- see https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup for
 			-- possible options. These can also be functions that return these options.
 			position = "left",      -- left, right, top, bottom, float, current
-			width = 40,             -- applies to left and right positions
+			width = 30,             -- applies to left and right positions
 			height = 15,            -- applies to top and bottom positions
 			auto_expand_width = false, -- expand the window when file exceeds the window width. does not work with position = "float"
 			popup = {               -- settings that apply to float position only
@@ -476,9 +482,9 @@ function Plugin.config()
 				visible = false,                   -- when true, they will just be displayed differently than normal items
 				force_visible_in_empty_folder = false, -- when true, hidden files will be shown if the root folder is otherwise empty
 				show_hidden_count = true,          -- when true, the number of hidden items in each folder will be shown as the last entry
-				hide_dotfiles = true,
-				hide_gitignored = true,
-				hide_hidden = true, -- only works on Windows for hidden files/directories
+				hide_dotfiles = false,
+				hide_gitignored = false,
+				hide_hidden = false, -- only works on Windows for hidden files/directories
 				hide_by_name = {
 					".DS_Store",
 					"thumbs.db",

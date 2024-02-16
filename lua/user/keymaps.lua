@@ -72,3 +72,6 @@ vim.keymap.set("n", "<leader>p", ":BufferPin<CR>")
 -- close all buffer but current
 vim.keymap.set("n", "<leader>q", ":BufferCloseAllButCurrent<CR>")
 
+-- macos alt key fix
+--macos_option_as_alt = left
+
