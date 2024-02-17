@@ -197,6 +197,21 @@ function Plugin.config()
 			c = { "zm", "Close All Folds" },
 			f = { "za", "Toggle Fold" },
 		},
+		["<leader>C"] = {
+			name = "+LSP",
+			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
+			r = { "<cmd>lua vim.lsp.buf.references()<CR>", "Find References" },
+			s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+			i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" },
+			h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Hover" },
+			t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Go to Type Definition" },
+			f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" },
+			n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Symbol" },
+			l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
+			["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Diagnostic" },
+			["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Diagnostic" },
+			["<F4>"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+		},
 	})
 end
 
