@@ -64,6 +64,7 @@ function Plugin.config()
 			"html",
 			"cssls",
 			"lua_ls",
+			"angularls",
 		},
 		handlers = {
 			-- See :help mason-lspconfig-dynamic-server-setup
@@ -79,6 +80,16 @@ function Plugin.config()
 					settings = {
 						completions = {
 							completeFunctionCalls = true,
+						},
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
 						},
 					},
 				})
@@ -99,6 +110,14 @@ function Plugin.config()
 						".eslintrc.yaml",
 						".eslintrc.yml"
 					),
+				})
+			end,
+			["angularls"] = function()
+				lspconfig.angularls.setup({
+					capabilities = lsp_capabilities,
+					cmd = { "ngserver", "--stdio" },
+					filetypes = { "typescript", "typescriptreact", "html" },
+					root_dir = lspconfig.util.root_pattern("angular.json", "tsconfig.json"),
 				})
 			end,
 		},
@@ -130,4 +149,3 @@ function user.on_attach()
 end
 
 return Plugin
-

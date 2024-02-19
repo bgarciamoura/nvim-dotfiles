@@ -5,7 +5,7 @@ local opts = { noremap = true, silent = true }
 function Plugin.config()
 	require("ufo").setup({
 		open_fold_hl_timeout = 100,
-		close_fold_kinds = { "comment", "function", "if", "else", "for", "while", "try", "except", "class" },
+		-- close_fold_kinds = { "comment", "function", "if", "else", "for", "while", "try", "except", "class", "region" },
 		preview = {
 			win_config = {
 				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
@@ -67,4 +67,3 @@ function Plugin.config()
 end
 
 return Plugin
-

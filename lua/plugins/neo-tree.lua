@@ -488,7 +488,14 @@ function Plugin.config()
 				hide_by_name = {
 					".DS_Store",
 					"thumbs.db",
-					--"node_modules",
+					"node_modules",
+					".git",
+					".gitignore",
+					".gitmodules",
+					".tool-versions",
+					".vscode",
+					".idea",
+					".angular",
 				},
 				hide_by_pattern = { -- uses glob style patterns
 					--"*.meta",
@@ -704,4 +711,3 @@ function Plugin.config()
 end
 
 return Plugin
-
