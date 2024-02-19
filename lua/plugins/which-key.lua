@@ -197,7 +197,7 @@ function Plugin.config()
 			c = { "zm", "Close All Folds" },
 			f = { "za", "Toggle Fold" },
 		},
-		["<leader>C"] = {
+		["<leader>P"] = {
 			name = "+LSP",
 			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
 			r = { "<cmd>lua vim.lsp.buf.references()<CR>", "Find References" },
@@ -216,4 +216,3 @@ function Plugin.config()
 end
 
 return Plugin
-
