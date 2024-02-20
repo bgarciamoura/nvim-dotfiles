@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- option to fix checkbox visualization on obsidian plugin
-vim.opt_global.conceallevel = 1
+vim.opt.conceallevel = 2
 
 -- obisidian follow link
 vim.keymap.set("n", "gf", function()

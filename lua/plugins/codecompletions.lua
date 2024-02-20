@@ -6,13 +6,29 @@ Plugin.dependencies = {
 	{ "hrsh7th/cmp-path" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
+	-- icons
+	{ "hrsh7th/cmp-emoji" },
+	{ "chrisgrieser/cmp-nerdfont" },
+
+	-- Css colors
+	{ "nat-418/cmp-color-names.nvim" },
+
+	-- Autocomplete for npmjs
+	{
+		"David-Kunz/cmp-npm",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		ft = "json",
+	},
+
+	-- Autocomplete for lua plugins
+	{ "KadoBOT/cmp-plugins" },
+
+	-- Autocomplete from dotenv files
+	{ "SergioRibera/cmp-dotenv" },
 
 	-- Snippets
 	{ "L3MON4D3/LuaSnip" },
-	{ "rafamadriz/friendly-snippets" },
-	{ "dcampos/cmp-snippy" },
-	{ "quangnguyen30192/cmp-nvim-ultisnips" },
-	{ "kento-ogata/cmp-tsnip" },
+	{ "hrsh7th/cmp-vsnip" },
 }
 
 Plugin.event = "InsertEnter"
@@ -22,6 +38,11 @@ function Plugin.config()
 
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
+	require("cmp-color-names").setup({})
+	require("cmp-npm").setup({})
+	require("cmp-plugins").setup({
+		files = { ".*\\.lua" },
+	})
 
 	require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -29,6 +50,7 @@ function Plugin.config()
 
 	-- See :help cmp-config
 	cmp.setup({
+		dependencies = Plugin.dependencies,
 		snippet = {
 			expand = function(args)
 				luasnip.lsp_expand(args.body)
@@ -37,12 +59,16 @@ function Plugin.config()
 		sources = {
 			{ name = "path" },
 			{ name = "nvim_lsp" },
-			{ name = "buffer",   keyword_length = 3 },
-			{ name = "luasnip",  keyword_length = 2 },
-			{ name = "copilot",  keyword_length = 2 },
-			{ name = "friendly" },
-			{ name = "ultisnips" },
-			{ name = "tsnip" },
+			{ name = "buffer",     keyword_length = 3 },
+			{ name = "luasnip",    keyword_length = 2 },
+			{ name = "copilot",    keyword_length = 2 },
+			{ name = "emoji" },
+			{ name = "nerdfont" },
+			{ name = "color_names" },
+			{ name = "npm",        keyword_length = 2 },
+			{ name = "plugins",    keyword_length = 2 },
+			{ name = "dotenv",     keyword_length = 2 },
+			{ name = "vsnip" },
 			{ name = "snippy" },
 		},
 		window = {
@@ -59,6 +85,36 @@ function Plugin.config()
 					path = "🖫",
 				}
 
+				local kind_icons = {
+					Text = "",
+					Method = "󰆧",
+					Function = "󰊕",
+					Constructor = "",
+					Field = "󰇽",
+					Variable = "󰂡",
+					Class = "󰠱",
+					Interface = "",
+					Module = "",
+					Property = "󰜢",
+					Unit = "",
+					Value = "󰎠",
+					Enum = "",
+					Keyword = "󰌋",
+					Snippet = "",
+					Color = "󰏘",
+					File = "󰈙",
+					Reference = "",
+					Folder = "󰉋",
+					EnumMember = "",
+					Constant = "󰏿",
+					Struct = "",
+					Event = "",
+					Operator = "󰆕",
+					TypeParameter = "󰅲",
+				}
+
+				-- icons on the left
+				item.kind = string.format("%s %s", kind_icons[item.kind], item.kind) -- This concatenates the icons with the name of the item kind
 				item.menu = menu_icon[entry.source.name]
 				return item
 			end,

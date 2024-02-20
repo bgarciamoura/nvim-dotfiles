@@ -4,6 +4,7 @@ local load = function(mod)
 	require(mod)
 end
 
+load("user.settings")
 load("user.commands")
 load("user.keymaps")
 
