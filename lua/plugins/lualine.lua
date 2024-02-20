@@ -20,8 +20,8 @@ Plugin.opts = {
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch" },
-		lualine_c = { "filename" },
+		lualine_b = { "hostname", "branch" },
+		lualine_c = { "filename", "filesize" },
 		lualine_x = {
 			function()
 				local ok, pomo = pcall(require, "pomo")
@@ -41,7 +41,7 @@ Plugin.opts = {
 			"filetype",
 			"lsp",
 		},
-		lualine_y = { "progress" },
+		lualine_y = { "selectioncount", "progress" },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
