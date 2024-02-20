@@ -99,7 +99,7 @@ end
 function Plugin.config()
 	local wk = require("which-key")
 	wk.register({
-		["<leader>T"] = {
+		["<leader>f"] = {
 			name = "+Files",
 			b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
 			f = { "<cmd>Telescope find_files<CR>", "Find Files" },
@@ -211,6 +211,12 @@ function Plugin.config()
 			["[d"] = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Diagnostic" },
 			["]d"] = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Diagnostic" },
 			["<F4>"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+		},
+		["<leader>T"] = {
+			name = "+Pomodoro",
+			p = { "<cmd>TimerStart 25m Pomodoro<CR>", "Start Pomodoro" },
+			s = { "<cmd>TimerStart 5m Short_Break<CR>", "Start Short Break" },
+			l = { "<cmd>TimerStart 15m Long_Break<CR>", "Start Long Break" },
 		},
 	})
 end
