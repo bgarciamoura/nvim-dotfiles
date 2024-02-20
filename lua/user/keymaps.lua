@@ -47,18 +47,26 @@ vim.keymap.set("n", "<C-a>", ":keepjumps normal! ggVG<cr>")
 
 -- undo
 vim.keymap.set("n", "<C-z>", ":undo<CR>")
+vim.keymap.set("i", "<C-z>", ":undo<CR>")
+
+-- close neovim
+vim.keymap.set("n", "<C-q>", ":q<CR>")
 
 -- redo
 vim.keymap.set("n", "<C-y>", ":redo<CR>")
+vim.keymap.set("i", "<C-y>", ":redo<CR>")
+
+-- insert new line without entering insert mode
+vim.keymap.set("n", "<leader>o", "o<Esc>", { silent = true, noremap = true })
 
 -- close current buffer
 vim.keymap.set("n", "<leader>c", ":BufferClose<CR>")
 
 -- move to next buffer
-vim.keymap.set("n", "<leader>l", ":BufferNext<CR>")
+-- vim.keymap.set("n", "<leader>l", ":BufferNext<CR>")
 
 -- move to previous buffer
-vim.keymap.set("n", "<leader>h", ":BufferPrevious<CR>")
+-- vim.keymap.set("n", "<leader>h", ":BufferPrevious<CR>")
 
 -- reorder: move the buffer next
 vim.keymap.set("n", "<leader>>", ":BufferMoveNext")
@@ -72,6 +80,8 @@ vim.keymap.set("n", "<leader>p", ":BufferPin<CR>")
 -- close all buffer but current
 vim.keymap.set("n", "<leader>q", ":BufferCloseAllButCurrent<CR>")
 
--- macos alt key fix
---macos_option_as_alt = left
-
+-- move line up and down - vscode-like
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- swap line up(n)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- swap line down(n)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- swap line up(v)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- swap line down(v)

@@ -11,4 +11,3 @@ load("user.keymaps")
 require("user.plugins")
 
 pcall(vim.cmd.colorscheme, "catppuccin")
-

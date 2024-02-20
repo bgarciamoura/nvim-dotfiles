@@ -4,7 +4,8 @@ local Plugins = {
 	{ "sudormrfbin/cheatsheet.nvim" },
 	{ "nvim-lua/popup.nvim" },
 	{ "nvim-neotest/neotest-jest" },
+	{ "kevinhwang91/promise-async" },
+	-- { "vimpostor/vim-tpipeline" },
 }
 
 return Plugins
-
