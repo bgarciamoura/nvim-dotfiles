@@ -59,3 +59,15 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		end
 	end,
 })
+
+-- option to fix checkbox visualization on obsidian plugin
+vim.opt_global.conceallevel = 1
+
+-- obisidian follow link
+vim.keymap.set("n", "gf", function()
+	if require("obsidian").util.cursor_on_markdown_link() then
+		return "<cmd>ObsidianFollowLink<CR>"
+	else
+		return "gf"
+	end
+end, { noremap = false, expr = true })
