@@ -6,6 +6,7 @@ local Plugins = {
 	{ "nvim-neotest/neotest-jest" },
 	{ "kevinhwang91/promise-async" },
 	-- { "vimpostor/vim-tpipeline" },
+	{ "shortcuts/no-neck-pain.nvim", version = "*" },
 }
 
 return Plugins
