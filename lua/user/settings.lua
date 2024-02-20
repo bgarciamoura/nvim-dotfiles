@@ -71,3 +71,6 @@ vim.keymap.set("n", "gf", function()
 		return "gf"
 	end
 end, { noremap = false, expr = true })
+
+-- set termguicolors
+vim.opt.termguicolors = true
