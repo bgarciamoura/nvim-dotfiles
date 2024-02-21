@@ -2,7 +2,9 @@ local Plugin = { "lukas-reineke/indent-blankline.nvim" }
 
 Plugin.main = "ibl"
 
-Plugin.opts = {}
+Plugin.opts = {
+	indent = { highlight = "VertSplit", char = "│" },
+}
 
 function Plugin.config()
 	require("ibl").setup(Plugin.opts)

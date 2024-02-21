@@ -80,6 +80,10 @@ vim.keymap.set("n", "<leader>p", ":BufferPin<CR>")
 -- close all buffer but current
 vim.keymap.set("n", "<leader>q", ":BufferCloseAllButCurrent<CR>")
 
+-- set kj to escape
+vim.keymap.set("i", "kj", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("v", "kj", "<Esc>", { noremap = true, silent = true })
+
 -- move line up and down - vscode-like
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- swap line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- swap line down(n)
