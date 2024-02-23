@@ -56,6 +56,9 @@ function Plugin.config()
 				luasnip.lsp_expand(args.body)
 			end,
 		},
+		completion = {
+			autocomplete = false,
+		},
 		sources = {
 			{ name = "path" },
 			{ name = "nvim_lsp" },
@@ -121,7 +124,7 @@ function Plugin.config()
 		},
 		-- See :help cmp-mapping
 		mapping = cmp.mapping.preset.insert({
-			["<A-c>"] = cmp.mapping.complete(),
+			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.close(),
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
