@@ -82,6 +82,7 @@ Plugin.opts = {
 		-- this is mostly relevant for keymaps that start with a native binding
 		i = { "j", "k" },
 		v = { "j", "k" },
+		n = { "j", "k", "v" },
 	},
 	-- disable the WhichKey popup for certain buf types and file types.
 	-- Disabled by default for Telescope
@@ -94,6 +95,8 @@ Plugin.opts = {
 function Plugin.init()
 	vim.o.timeout = true
 	vim.o.timeoutlen = 300
+	local presets = require("which-key.plugins.presets")
+	presets.operators["v"] = nil
 end
 
 function Plugin.config()

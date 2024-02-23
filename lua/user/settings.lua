@@ -35,7 +35,7 @@ vim.opt.autowrite = true
 vim.opt.autowriteall = true
 
 -- highlight the cursor line to be more easy to find it
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- set the encoding to utf-8
 vim.opt.encoding = "utf-8"
@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- option to fix checkbox visualization on obsidian plugin
-vim.opt_global.conceallevel = 1
+vim.opt.conceallevel = 2
 
 -- obisidian follow link
 vim.keymap.set("n", "gf", function()
@@ -71,3 +71,20 @@ vim.keymap.set("n", "gf", function()
 		return "gf"
 	end
 end, { noremap = false, expr = true })
+
+-- set termguicolors
+vim.opt.termguicolors = false
+
+--vim.opt.highlight = "Cursor guifg=white guibg=black"
+--vim.opt.highlight = "iCursor guifg=white guibg=steelblue"
+--vim.opt.guicursor = "n-v-c:block-Cursor"
+-- vim.opt.guicursor = "i:ver100-iCursor"
+-- vim.opt.guicursor = "n-v-c:blinkon0"
+-- vim.opt.guicursor = "i:blinkwait10"
+vim.o.guicursor = table.concat({
+	"n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
+	"i-ci:ver25-Cursor/lCursor-blinkwait200-blinkon50-blinkoff50",
+	"r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
+}, ",")
+
+

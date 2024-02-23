@@ -1,0 +1,111 @@
+local Plugin = { "goolord/alpha-nvim" }
+
+function Plugin.config()
+	local alpha = require("alpha")
+	local dashboardTheme = require("alpha.themes.dashboard")
+
+	-- Colors
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo1", { fg = "#DA4939" })
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo2", { fg = "#FF875F" })
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo3", { fg = "#FFC66D" })
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo4", { fg = "#00FF03" })
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo5", { fg = "#00AFFF" })
+	vim.api.nvim_set_hl(0, "NeovimDashboardLogo6", { fg = "#8800FF" })
+
+	-- type 1
+	--  ██╗░░░██╗██╗░░░██╗░█████╗░██████╗░░█████╗░░██████╗
+	-- 	██║░░░██║╚██╗░██╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝
+	-- 	╚██╗░██╔╝░╚████╔╝░██║░░╚═╝██████╔╝██║░░██║╚█████╗░
+	-- 	░╚████╔╝░░░╚██╔╝░░██║░░██╗██╔══██╗██║░░██║░╚═══██╗
+	-- 	░░╚██╔╝░░░░░██║░░░╚█████╔╝██║░░██║╚█████╔╝██████╔╝
+	-- 	░░░╚═╝░░░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝░╚════╝░╚═════╝░
+
+	-- type 2
+	-- ██╗   ██╗██╗   ██╗ ██████╗██████╗  ██████╗ ███████╗
+	-- ██║   ██║╚██╗ ██╔╝██╔════╝██╔══██╗██╔═══██╗██╔════╝
+	-- ██║   ██║ ╚████╔╝ ██║     ██████╔╝██║   ██║███████╗
+	-- ╚██╗ ██╔╝  ╚██╔╝  ██║     ██╔══██╗██║   ██║╚════██║
+	-- 	╚████╔╝    ██║   ╚██████╗██║  ██║╚██████╔╝███████║
+	-- 	 ╚═══╝     ╚═╝    ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+	-- type 3
+	--  **      ** **    **   ******  *******     *******    ********
+	-- /**     /**//**  **   **////**/**////**   **/////**  **//////
+	-- /**     /** //****   **    // /**   /**  **     //**/**
+	-- //**    **   //**   /**       /*******  /**      /**/*********
+	--	 //**  **     /**   /**       /**///**  /**      /**////////**
+	-- 		//****      /**   //**    **/**  //** //**     **        /**
+	-- 		 //**       /**    //****** /**   //** //*******   ********
+	-- 			//        //      //////  //     //   ///////   ////////
+
+	-- Set the header of the dashboard
+	-- dashboardTheme.section.header.type = "group"
+	-- dashboardTheme.section.header.val = {
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "██╗░░░██╗██╗░░░██╗░█████╗░██████╗░░█████╗░░██████╗",
+	-- 		opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" },
+	-- 	},
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "██║░░░██║╚██╗░██╔╝██╔══██╗██╔══██╗██╔══██╗██╔════╝",
+	-- 		opts = { hl = "NeovimDashboardLogo2", shrink_margin = false, position = "center" },
+	-- 	},
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "╚██╗░██╔╝░╚████╔╝░██║░░╚═╝██████╔╝██║░░██║╚█████╗░",
+	-- 		opts = { hl = "NeovimDashboardLogo3", shrink_margin = false, position = "center" },
+	-- 	},
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "░╚████╔╝░░░╚██╔╝░░██║░░██╗██╔══██╗██║░░██║░╚═══██╗",
+	-- 		opts = { hl = "NeovimDashboardLogo4", shrink_margin = false, position = "center" },
+	-- 	},
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "░░╚██╔╝░░░░░██║░░░╚█████╔╝██║░░██║╚█████╔╝██████╔╝",
+	-- 		opts = { hl = "NeovimDashboardLogo5", shrink_margin = false, position = "center" },
+	-- 	},
+	-- 	{
+	-- 		type = "text",
+	-- 		val = "░░░╚═╝░░░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝░╚════╝░╚═════╝░",
+	-- 		opts = { hl = "NeovimDashboardLogo6", shrink_margin = false, position = "center" },
+	-- 	},
+	-- }
+
+	-- set the menu
+	dashboardTheme.section.buttons.val = {
+		dashboardTheme.button("e", "  New file", ":enew<CR>"),
+		dashboardTheme.button("f", "󰈞  Find file", ":Telescope find_files<CR>"),
+		dashboardTheme.button("h", "  Recently opened files", ":Telescope oldfiles<CR>"),
+		dashboardTheme.button("b", "  Recently opened buffers", ":Telescope buffers<CR>"),
+		dashboardTheme.button("p", "  Projects", ":Telescope projects<CR>"),
+		dashboardTheme.button("q", "󰩈  Quit", ":q<CR>"),
+	}
+
+	-- Disable folding on alpha buffer
+	vim.cmd([[
+    autocmd FileType alpha setlocal nofoldenable
+	]])
+	dashboardTheme.section.footer.opts.hl = "@alpha.footer"
+	table.insert(dashboardTheme.config.layout, 5, { type = "padding", val = 1 })
+
+	require("alpha").setup(dashboardTheme.opts)
+	vim.api.nvim_create_autocmd("User", {
+		callback = function()
+			local stats = require("lazy").stats()
+			local ms = math.floor(stats.startuptime * 100) / 100
+			dashboardTheme.section.footer.val = "󱐌 Lazy-loaded "
+					.. stats.loaded
+					.. "/"
+					.. stats.count
+					.. " plugins in "
+					.. ms
+					.. "ms "
+					.. "󱐌"
+			pcall(vim.cmd.AlphaRedraw)
+		end,
+	})
+end
+
+return Plugin

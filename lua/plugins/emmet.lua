@@ -12,8 +12,7 @@ function Plugin.config()
 
 	-- set emmet to complete with ctrl-y only
 
-	vim.keymap.set("i", "<C-e>", "<Plug>(emmet-expand-abbr)", { noremap = true, silent = true })
+	vim.keymap.set("i", "<C-Z>", "<Plug>(emmet-expand-abbr)", { noremap = true, silent = true })
 end
 
 return Plugin
-

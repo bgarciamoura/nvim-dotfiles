@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>")
 
 -- change the k for j to move up and down
-vim.keymap.set("n", "k", "j")
+-- vim.keymap.set("n", "k", "j")
 
 -- change the j for k to move up and down
-vim.keymap.set("n", "j", "k")
+-- vim.keymap.set("n", "j", "k")
 
 -- move cursor to the left window
 vim.keymap.set("n", "<C-h>", "<C-W>h")
@@ -79,6 +79,10 @@ vim.keymap.set("n", "<leader>p", ":BufferPin<CR>")
 
 -- close all buffer but current
 vim.keymap.set("n", "<leader>q", ":BufferCloseAllButCurrent<CR>")
+
+-- set kj to escape
+vim.keymap.set("i", "kj", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("v", "kj", "<Esc>", { noremap = true, silent = true })
 
 -- move line up and down - vscode-like
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- swap line up(n)

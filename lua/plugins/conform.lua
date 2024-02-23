@@ -38,4 +38,3 @@ function Plugin.config()
 end
 
 return Plugin
-
