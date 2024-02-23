@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>")
 
 -- change the k for j to move up and down
-vim.keymap.set("n", "k", "j")
+-- vim.keymap.set("n", "k", "j")
 
 -- change the j for k to move up and down
-vim.keymap.set("n", "j", "k")
+-- vim.keymap.set("n", "j", "k")
 
 -- move cursor to the left window
 vim.keymap.set("n", "<C-h>", "<C-W>h")
