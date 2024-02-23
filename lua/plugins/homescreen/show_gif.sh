@@ -21,7 +21,7 @@ while true; do
   for frame in "${output_array[@]}" 
   do
       clear
-      echo -e "$frame"
+      echo "$frame"
       sleep 0.05
   done
 done
